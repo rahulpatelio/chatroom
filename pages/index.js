@@ -1,3 +1,4 @@
+import { getClientBuildManifest } from 'next/dist/client/route-loader';
 import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import { io } from "socket.io-client";
@@ -83,7 +84,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
 
-      <h1>NOISE</h1>
+    <h1>NOISE</h1>
 
     <div className="user-messaging">  
       {/* The username area */}
@@ -119,7 +120,7 @@ export default function Home() {
       <div className="chatfeed-container">
         {history.map(({ username, message }, i) => (
           <div key={i}>
-            <b>{username}</b>{message}
+            <b>{username}</b> {message}
           </div>
         ))}
       </div>
